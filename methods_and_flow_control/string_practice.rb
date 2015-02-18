@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 practice_string = "this is a string to practice with"
 
 puts practice_string
