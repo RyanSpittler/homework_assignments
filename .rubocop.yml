@@ -1,5 +1,6 @@
 AllCops:
   Exclude:
     - 'Guardfile'
+    - 'homework_tester/**/*'
 StringLiterals:
   Enabled: False
