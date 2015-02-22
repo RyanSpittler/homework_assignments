@@ -21,7 +21,7 @@ def ask_for_word(term, list_of_words)
     list_of_words << term
   end
   puts " #{term}:"
-  gets.chomp
+  gets.strip
 end
 
 already_requested = []
@@ -56,7 +56,7 @@ puts "A vacation is when you take a trip to some #{mad_libs[0]} place"
 puts "with your #{mad_libs[1]} family. Usually you go to some place"
 puts "that is near a/an #{mad_libs[2]} or up on a/an #{mad_libs[3]}."
 puts "A good vacation place is one where you can ride #{mad_libs[4]}"
-puts "or play #{mad_libs[5]} or go hunting for #{mad_libs[6]} . I like"
+puts "or play #{mad_libs[5]} or go hunting for #{mad_libs[6]}. I like"
 puts "to spend my time #{mad_libs[7]} or #{mad_libs[8]}."
 puts "When parents go on a vacation, they spend their time eating"
 puts "three #{mad_libs[9]} a day, and fathers play golf, and mothers"
