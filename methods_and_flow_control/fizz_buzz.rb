@@ -1,22 +1,11 @@
 #!/usr/bin/env ruby
 
-# Adding these methods to Integers makes the whole read easier.
-class Fixnum
-  def divisible_by?(divisor)
-    if self % divisor == 0
-      true
-    else
-      false
-    end
-  end
-
-  def fizzbuzzer
-    if self.divisible_by?(3) || self.divisible_by?(5)
-      "#{'Fizz' if self.divisible_by?(3)}#{'Buzz' if self.divisible_by?(5)}"
-    else
-      self
-    end
+def fizzbuzzer(number)
+  if number % 3 == 0 || number % 5 == 0
+    "#{'Fizz' if number % 3 == 0}#{'Buzz' if number % 5 == 0}"
+  else
+    number
   end
 end
 
-(1..100).each { |number| puts number.fizzbuzzer }
+(1..100).each { |number| puts fizzbuzzer(number) }
