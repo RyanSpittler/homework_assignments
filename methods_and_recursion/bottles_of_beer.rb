@@ -1,18 +1,18 @@
 #!/usr/bin/env ruby
 
+def bottles_line(number, wall = true)
+  "#{number} bottle#{'s' unless number == 1} of beer#{' on the wall' if wall}"
+end
+
 def sing_a_verse(number1, number2)
-  puts "#{number1} bottle#{'s' unless number1 == 1} of beer on the wall,"\
-       " #{number1} bottle#{'s' unless number1 == 1} of beer."
-  puts "Take one down and pass it around,"\
-       " #{number2} bottle#{'s' unless number2 == 1} of beer on the wall."
-  puts
+  puts "#{bottles_line(number1)}, #{bottles_line(number1, false)}."
+  puts "Take one down and pass it around, #{bottles_line(number2)}."
+  puts ''
 end
 
 def sing_last_verse
-  puts "No more bottles of beer on the wall,"\
-         " no more bottles of beer."
-  puts "Go to the store and buy some more,"\
-         " 99 bottles of beer on the wall."
+  puts "#{bottles_line('No more')}, #{bottles_line('no more', false)}."
+  puts "Go to the store and buy some more, #{bottles_line(99)}."
 end
 
 def sing_a_song(remaining)
