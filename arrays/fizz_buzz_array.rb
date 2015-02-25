@@ -6,4 +6,7 @@ def fizzbuzzer(number)
   fizzbuzz
 end
 
-(1..100).each { |number| puts fizzbuzzer(number) }
+# (1..100).each { |number| puts fizzbuzzer(number) }
+numbers = (1..100).to_a
+fizz_buzz_array = numbers.map { |number| fizzbuzzer(number) }
+puts fizz_buzz_array
