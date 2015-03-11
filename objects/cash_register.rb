@@ -7,43 +7,48 @@ class CashRegister
   end
 
   def total
-    puts format('%.2f', @total)
+    dollars(@total)
   end
 
   def purchase(cost)
-    puts format('%.2f', @total += cost)
+    @total += cost
+    "You buy #{dollars(cost)}. Your total is now #{total}."
   end
 
   def pay(payment)
+    string = "You pay #{dollars(payment)}. "
     if payment > @total
       change = payment - @total
       @total = 0.0
-      puts "Your change is $#{format('%.2f', change)}"
+      string << "Your change is #{dollars(change)}"
     else
-      # new total
       @total -= payment
-      puts "Your new total is $#{format('%.2f', @total)}"
+      string << "Your new total is #{total}"
     end
+  end
+  
+  def dollars(amount)
+    '$' + format('%.2f', amount)
   end
 end
 
 if __FILE__ == $PROGRAM_NAME
   puts "Example One:"
   register = CashRegister.new
-  register.total
-  register.purchase(3.78)
-  register.total
-  register.pay(5.00)
-  register.total
+  puts register.total
+  puts register.purchase(3.78)
+  puts register.total
+  puts register.pay(5.00)
+  puts register.total
 
   puts "Example Two:"
   register2 = CashRegister.new
-  register2.total
-  register2.purchase(3.78)
-  register2.purchase(5.22)
-  register2.total
-  register2.pay(5.00)
-  register2.total
-  register2.pay(5.00)
-  register2.total
+  puts register2.total
+  puts register2.purchase(3.78)
+  puts register2.purchase(5.22)
+  puts register2.total
+  puts register2.pay(5.00)
+  puts register2.total
+  puts register2.pay(5.00)
+  puts register2.total
 end
